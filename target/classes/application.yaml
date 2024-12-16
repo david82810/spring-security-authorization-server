@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: spring-security-authorization-server
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://125.228.42.7:3306/oauth2?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: n0 eji6fmp6u/ 5j04
+  security:
+    oauth2:
+      client:
+        registration:
+          line:
+            client-id: 2006654139
+            client-secret: b8d1dfd9a4829efcc1cb2daabdf3e9c3
+            scope: profile+openid+email
+            client-authentication-method: client_secret_basic
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8888/oauth2/line/callback
+            client-name: Sign in with Line
+        provider:
+          line:
+            authorization-uri: https://access.line.me/oauth2/v2.1/authorize
+            token-uri: https://api.line.me/oauth2/v2.1/token
+            user-info-uri: https://api.line.me/v2/profile
+            user-name-attribute: userId
+server:
+  port: 8888
